@@ -1,0 +1,8 @@
+<h2 *ngIf="member">{{ member.last_name }} Details</h2>
+<a [routerLink]="['/liste-membres']">Retour</a>
+<div *ngIf="member">
+  <p>Nom : {{ member.last_name }}</p>
+  <p>Prenom : {{ member.first_name }}</p>
+  <p>Autre nom : {{ member.middle_name }}</p>
+
+</div>

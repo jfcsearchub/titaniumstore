@@ -1,0 +1,30 @@
+
+<a [routerLink]="['/membres']">Retour</a>
+<h2>List des membres</h2>
+
+<div *ngFor="let member of members">
+  <h3>
+    <div *ngIf='member.middle_name'>
+      <a
+        [title]="member.first_name+' '+member.middle_name+' '+member.last_name"
+        [routerLink]="['/members', member.id]"
+        >
+        {{member.first_name}} {{member.middle_name}} {{member.last_name}}
+      </a>
+    </div>
+    <div *ngIf='!member.middle_name'>
+      <a
+        [title]="member.first_name+' '+member.last_name"
+        [routerLink]="['/members', member.id]"
+      >
+        {{member.first_name}} {{member.last_name}}
+      </a>
+    </div>
+  </h3>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
